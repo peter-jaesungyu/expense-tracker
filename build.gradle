@@ -1,9 +1,14 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'com.devturtle'
 version = '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'com.devturtle.Application'
+}
 
 repositories {
     mavenCentral()
@@ -12,6 +17,12 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // Gson for parsing JSON
+    implementation 'com.google.code.gson:gson:2.12.1'
+
+    // Apache Commons CLI for parsing command line arguments
+    implementation 'commons-cli:commons-cli:1.9.0'
 }
 
 test {
